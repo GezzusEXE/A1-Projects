@@ -1,0 +1,82 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgabe_4__Alter_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Alter_Pomberger_Luka ";
+
+            Console.WriteLine("Wie heißt du? ");
+            string varUserName = Console.ReadLine();
+
+            Console.WriteLine("Hallo " + varUserName);
+
+            Console.WriteLine("Was ist dein Geburtsjahr? ");
+            string varGeburtsJahr = Console.ReadLine();
+
+
+            Console.WriteLine("Welches Jahr ist derzeitig?");
+            string varAktuellesJahr = Console.ReadLine();
+
+            int varGeburt = int.Parse(varGeburtsJahr);
+            int varHeute = int.Parse(varAktuellesJahr);
+            int varAlter = varHeute - varGeburt;
+
+            Console.WriteLine("Hallo " + varUserName + "!");
+            Console.WriteLine("Wir haben das Jahr " + varAktuellesJahr + ". Da du im Jahr " + varGeburtsJahr + " Geboren bist, bist du " + varAlter + " Jahre alt ");
+
+            //If Abfrage
+             if (0 > varAlter) // Bedingung ist Wahr
+            {
+                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                Console.WriteLine("Du kannst nicht jünger als 0 sein!");
+
+
+            }
+
+           else if (0 == varAlter)
+            // Bedingung ist Wahr
+            {
+                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                Console.WriteLine("So Jung kannst du das überhaupts eingeben?");
+
+
+            }
+
+           else if (varAlter < 20) // Bedingung ist Wahr
+            {
+                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                Console.WriteLine("Du bist unter 20");
+
+
+            }
+
+           else if (varAlter < 30) // Bedingung ist Wahr
+            {
+                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                Console.WriteLine("Du bist unter 30");
+
+
+            }
+
+           else if (varAlter >= 30) // Bedingung ist Wahr
+            {
+                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                Console.WriteLine("Du bist über 30 oder 30");
+
+
+            }
+
+            Console.ReadLine();
+
+
+        }
+    }
+}
