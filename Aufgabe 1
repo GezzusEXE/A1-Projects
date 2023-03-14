@@ -1,0 +1,56 @@
+using System;
+public class Program
+{
+    public static void Main()
+    {
+         
+        
+        Console.Title = "Ich bin ein Berliner"; // Der Titel des Fensters in dem Fall die Konsole.
+
+        Console.WriteLine("Wie ist dein Name:");// Die Konsole Fragt nach dem Namen von dem Nutzer
+        
+        string varUserName = Console.ReadLine();
+
+        Console.WriteLine("Dein Name ist : " + varUserName);
+
+       
+
+        Console.WriteLine("Wie ist dein Nachname :"); // Die Konsole Fragt nach dem Nachnamen des Benutzer
+
+        string varUserName2 = Console.ReadLine(); // Ich erstelle mit dem String eine Variable und Read line ist das Eingabefenster des Benutzers.
+
+
+        Console.WriteLine("Dein Nachname ist : " + varUserName2);
+
+
+
+        Console.WriteLine("Gib jetzt eine Zahl ein");
+
+        string varZahl1 = Console.ReadLine();
+
+        Console.WriteLine("Gib jetzt noch eine Zahl ein");
+
+        string varZahl2 = Console.ReadLine();
+
+
+
+ 
+        int zahl1 = int.Parse(varZahl1);
+        int zahl2 = int.Parse(varZahl2);
+        int summe = zahl1 + zahl2;
+
+        Console.WriteLine("Das Ergebniss ist :" + summe);
+
+        Console.WriteLine("Wenn du jetzt Troll eingibst wirst du ein Troll sein ?");
+
+       string varTroll = Console.ReadLine();
+        if (varTroll.ToLower() == "troll");
+            Console.WriteLine("░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░\r\n░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░\r\n░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░\r\n░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░\r\n░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░\r\n█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█\r\n█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░\r\n░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░\r\n░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░\r\n░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░\r\n░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░");
+        Console.ReadLine();
+
+
+
+
+
+    }
+}
