@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgabe_4__Alter_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Alter_Pomberger_Luka ";
+
+            Console.WriteLine("Wie heißt du? ");
+            string varUserName = Console.ReadLine();
+
+            Console.WriteLine("Hallo " + varUserName);
+
+            Console.WriteLine("Was ist dein Geburtsjahr? ");
+            string varGeburtsJahr = Console.ReadLine();
+
+            Console.WriteLine("Welches Jahr ist derzeitig?");
+            string varAktuellesJahr = Console.ReadLine();
+
+            int varGeburt = int.Parse(varGeburtsJahr);
+            int varHeute = int.Parse(varAktuellesJahr);
+            int varAlter = varHeute - varGeburt;
+
+            Console.WriteLine("Hallo " + varUserName + "!");
+            Console.WriteLine("Wir haben das Jahr " + varAktuellesJahr + ". Da du im Jahr " + varGeburtsJahr + " Geboren bist, bist du " + varAlter + " Jahre alt " );
+
+            Console.ReadLine(); 
+        }
+    }
+}
