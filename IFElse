@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ifElse
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "IfElse - WennDannSonst";
+
+            //If Abfrage
+            if (900 > 100) // Bedingung ist Wahr
+            {
+                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                Console.Beep();
+            }
+
+            // If Else Abfrage - Wenn Dann
+
+            int varZahl1 = 32, varZahl2 = 64;
+                if(varZahl1 > varZahl2)
+            {
+                Console.WriteLine(varZahl1 + "ist größer als " + varZahl2);
+            }
+                else // Keine Bedingung daher keine ()
+
+            {
+                Console.WriteLine(varZahl1 + "ist kleiner als " + varZahl2);
+            }
+
+            // If - Else Is ELSE
+            int varUhrzeit = 10;
+
+            if (varUhrzeit >= 10)
+            { Console.WriteLine("Guten Morgen !");
+            }
+            else if (varUhrzeit >= 13)
+            { Console.WriteLine("Mittag"); }
+           
+            else if (varUhrzeit >= 20)
+            { Console.WriteLine("Guten Tag"); }
+
+            else
+            { Console.WriteLine("Guten Abend!"); }
+            Console.ReadLine();
+
+            //Ende unsere Abfrage
+        }
+    }
+}
