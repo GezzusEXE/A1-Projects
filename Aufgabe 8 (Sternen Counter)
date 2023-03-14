@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgabe_9
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            
+            
+            Console.Title = "Sterne_Pomberger_Luka";
+
+            Console.WriteLine("Wie heißt du"); // Name abfragen
+            string varUserName = Console.ReadLine();    //Auf Benutzer eingabe warten
+
+            Console.WriteLine("Wie viele Sterne möchtest du ausgeben"); // Sterne abfrage
+            string varSterne = Console.ReadLine(); // Auf Benutzer eingabe warten
+
+            Console.WriteLine(" Hallo " + varUserName + " ! "); // Zeile mit dem Namen
+            Console.WriteLine(" Deine Sterneanzahl " + varSterne); // Zeile mit den Sternen
+
+            int varMainSterne = int.Parse(varSterne); // Converter
+            int varCounter = 0; // Counter 
+
+            while (varCounter < varMainSterne) // Dauerschleife
+            { Console.Write("*"); // Was soll die Konsole schreiben ?
+
+                varCounter++; // Werd erhöhen (Dekrement +1)
+            }
+            Console.ReadLine();
+        }
+    }
+}
