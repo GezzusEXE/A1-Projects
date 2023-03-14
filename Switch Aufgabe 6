@@ -1,0 +1,46 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Switch_Aufgabe_6
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Switch - Fälle ausdefinieren die zutreffen
+
+            int varAuto = 1; // Hauptwert wenn ich das ändere wird ein anderer Case genommen
+
+            switch(varAuto) // Wert 8 von der Variable wird übergeben
+            {
+                //Start der Fälle
+                case 1:
+                    Console.WriteLine("Ich wurde ausgelöst");
+                    break; //Fall gefunden? -> Hüpf aus Switch raus
+                case 8:
+                    Console.WriteLine("Das ist der Fall 8");
+                    break;
+
+                case 9:
+                    Console.WriteLine("hier ist der Fall 9");
+                    if (varAuto > 5)
+                    { Console.WriteLine("Du hast ein Case genommen der über 5 ist"); }
+                    break;
+
+            }
+
+            //Ende vom Switch
+            Console.WriteLine("Hier geht es nach dem Switch weiter!");
+            Console.ReadLine();
+       
+        
+        
+        
+        
+        
+        } 
+    }
+}
