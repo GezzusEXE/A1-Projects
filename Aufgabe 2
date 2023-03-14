@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.NetworkInformation;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgabe_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Aepfel_Pomberger_Luka";
+
+            Console.WriteLine("Wie heißt du?");
+            string varUserName = Console.ReadLine();    
+
+            Console.WriteLine("Guten Tag " +varUserName);
+
+
+            Console.WriteLine("Wie viele Äpfel hast du gestern gesammelt?");
+            string varApfel1 = Console.ReadLine();
+
+            Console.WriteLine("Cool und wie viele heute?");
+            string varApfel2 = Console.ReadLine();
+
+            Console.WriteLine("Ah ok und wie viel kostet ein Apfel derzeitig?");
+
+            string varPreis = Console.ReadLine();
+
+            Console.WriteLine("Hallo " + varUserName + "!");
+
+            Console.WriteLine("Du hast gestern " + varApfel1 + " Äpfel und heute " + varApfel2 + " Äpfel gesammelt.");
+
+            
+
+            int Zahl1 = int.Parse(varApfel1);
+            int Zahl2 = int.Parse(varApfel2);
+            int zahl3 = int.Parse(varPreis);
+            int summe = Zahl1 + Zahl2;
+
+            int Preis = summe * zahl3;
+
+
+            Console.WriteLine("Die " + summe + " gesammelten Äpfel haben einen Verkaufswert von " +Preis
+                + "Euro");
+
+            
+
+            Console.WriteLine("Geil und jetzt gib Troll ein!");
+
+            string varTroll = Console.ReadLine();
+            if (varTroll.ToLower() == "troll");
+            {
+                Console.WriteLine("░░░░░▄▄▄▄▀▀▀▀▀▀▀▀▄▄▄▄▄▄░░░░░░░\r\n░░░░░█░░░░▒▒▒▒▒▒▒▒▒▒▒▒░░▀▀▄░░░░\r\n░░░░█░░░▒▒▒▒▒▒░░░░░░░░▒▒▒░░█░░░\r\n░░░█░░░░░░▄██▀▄▄░░░░░▄▄▄░░░░█░░\r\n░▄▀▒▄▄▄▒░█▀▀▀▀▄▄█░░░██▄▄█░░░░█░\r\n█░▒█▒▄░▀▄▄▄▀░░░░░░░░█░░░▒▒▒▒▒░█\r\n█░▒█░█▀▄▄░░░░░█▀░░░░▀▄░░▄▀▀▀▄▒█\r\n░█░▀▄░█▄░█▀▄▄░▀░▀▀░▄▄▀░░░░█░░█░\r\n░░█░░░▀▄▀█▄▄░█▀▀▀▄▄▄▄▀▀█▀██░█░░\r\n░░░█░░░░██░░▀█▄▄▄█▄▄█▄████░█░░░\r\n░░░░█░░░░▀▀▄░█░░░█░█▀██████░█░░\r\n░░░░░▀▄░░░░░▀▀▄▄▄█▄█▄█▄█▄▀░░█░░\r\n░░░░░░░▀▄▄░▒▒▒▒░░░░░░░░░░▒░░░█░\r\n░░░░░░░░░░▀▀▄▄░▒▒▒▒▒▒▒▒▒▒░░░░█░\r\n░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░░░░█░░");
+
+            }
+
+
+            Console.ReadLine();
+        }
+
+
+        private static void Parse(string varApfel1)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
