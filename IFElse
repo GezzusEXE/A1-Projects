@@ -48,6 +48,11 @@ namespace ifElse
             { Console.WriteLine("Guten Abend!"); }
             Console.ReadLine();
 
+            Console.WriteLine("Hier gehts weiter!");
+            double varZahl5;
+                varZahl5 = Convert.ToDouble(Console.ReadLine());
+            Console.ReadLine() ;
+
             //Ende unsere Abfrage
         }
     }
