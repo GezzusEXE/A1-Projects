@@ -1,0 +1,63 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgabe_7___Altersabfrage_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            
+
+            Console.Title = "Altersabfrage_Pomberger_Luka";
+
+            Console.WriteLine("Wie alt bist du?");
+            string varAlter = Console.ReadLine();
+
+            Console.WriteLine("Wie heißt du?");
+            string varUserName = Console.ReadLine();
+            int varMainAlter = int.Parse(varAlter);
+
+
+
+            
+
+            Console.WriteLine("Hallo " + varUserName + " ! ");
+
+            Console.WriteLine("Da du " + varAlter + " Jahre alt bist, kannst du folgende 3 Spiele spielen ");
+
+            if (varMainAlter < 12)
+            {
+
+
+                Console.WriteLine("Roblox");
+                Console.WriteLine("Fifa");
+                Console.WriteLine("Uno");
+            }
+
+            else if (varMainAlter >= 12 && varMainAlter <= 18)
+            {
+
+                Console.WriteLine(" Minecraft");
+                Console.WriteLine(" Fortnite");
+                Console.WriteLine(" Rocket League");
+
+
+            }
+
+            else
+            {
+                Console.WriteLine("Du kannst alle Spiele spielen!");
+
+
+            }
+
+            Console.ReadLine();
+        }
+    }
+}
