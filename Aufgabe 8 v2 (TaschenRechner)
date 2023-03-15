@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,73 +11,79 @@ namespace Aufgabe_8__Taschenrechner_
     {
         static void Main(string[] args)
         {
-
+            string varWiederholen;
             Console.Title = "Taschenrechner2_Pomberger_Luka";
 
 
-            Console.WriteLine("Welche Rechenart möchtest du? Addition = 1, Subtraktion = 2, Multiplikation = 3, Division = 4");
-            string varRechenArt = Console.ReadLine();
-
-            Console.WriteLine("Du wählst also " + varRechenArt + " ! Gib nun die 1st Zahl ein die ich berechnen soll");
-            string varRechenArt2 = Console.ReadLine();
-
-            Console.WriteLine("Gib nun die 2te Zahl ein die ich berechnen soll");
-            string varRechenArt3 = Console.ReadLine();
-
-
-            int varRechenArtMain = int.Parse(varRechenArt);
-            int varRechenArt2Main = int.Parse(varRechenArt2);
-            int varRechenArt3Main = int.Parse(varRechenArt3);
-            
-
-
-
-
-
-            if (varRechenArtMain == 1) // Bedingung ist Wahr
+            do
             {
-                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
-                Console.WriteLine("Addition");
-                Console.Beep();
-                Console.WriteLine(varRechenArt2Main + varRechenArt3Main);
-                
+                Console.WriteLine("Welche Rechenart möchtest du? Addition = 1, Subtraktion = 2, Multiplikation = 3, Division = 4");
+                string varRechenArt = Console.ReadLine();
 
-            }
+                Console.WriteLine("Du wählst also " + varRechenArt + " ! Gib nun die 1st Zahl ein die ich berechnen soll");
+                string varRechenArt2 = Console.ReadLine();
 
-            if (varRechenArtMain == 2) // Bedingung ist Wahr
-            {
-                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
-                Console.WriteLine("Subtraktion");
-                Console.Beep();
-                Console.WriteLine(varRechenArt2Main - varRechenArt3Main);
-            }
-            if (varRechenArtMain == 3) // Bedingung ist Wahr
-            {
-                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
-                Console.WriteLine("Multiplikation");
-                Console.Beep();
-                Console.WriteLine(varRechenArt2Main * varRechenArt3Main);
-            }
-            if (varRechenArtMain == 4) // Bedingung ist Wahr
-            {
-                //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
-                Console.WriteLine("Division");
-                Console.Beep();
-             
-                
-                if(varRechenArt3Main != 0)
+                Console.WriteLine("Gib nun die 2te Zahl ein die ich berechnen soll");
+                string varRechenArt3 = Console.ReadLine();
+
+
+                int varRechenArtMain = int.Parse(varRechenArt);
+                int varRechenArt2Main = int.Parse(varRechenArt2);
+                int varRechenArt3Main = int.Parse(varRechenArt3);
+
+
+
+
+
+
+                if (varRechenArtMain == 1) // Bedingung ist Wahr
                 {
-                   
-                    Console.WriteLine(varRechenArt2Main / varRechenArt3Main);
+                    //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                    Console.WriteLine("Addition");
+                    Console.Beep();
+                    Console.WriteLine(varRechenArt2Main + varRechenArt3Main);
+
+
                 }
-                
-                else if (varRechenArt3Main == 0)
+
+                if (varRechenArtMain == 2) // Bedingung ist Wahr
                 {
-                    Console.WriteLine("Du kannst nicht druch 0 Dividieren :D");
+                    //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                    Console.WriteLine("Subtraktion");
+                    Console.Beep();
+                    Console.WriteLine(varRechenArt2Main - varRechenArt3Main);
                 }
+                if (varRechenArtMain == 3) // Bedingung ist Wahr
+                {
+                    //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                    Console.WriteLine("Multiplikation");
+                    Console.Beep();
+                    Console.WriteLine(varRechenArt2Main * varRechenArt3Main);
+                }
+                if (varRechenArtMain == 4) // Bedingung ist Wahr
+                {
+                    //Dieser Block wird ausgeführt, wenn die Bedingung WAHR ist
+                    Console.WriteLine("Division");
+                    Console.Beep();
+
+
+                    if (varRechenArt3Main != 0)
+                    {
+
+                        Console.WriteLine(varRechenArt2Main / varRechenArt3Main);
+                    }
+
+                    else if (varRechenArt3Main == 0)
+                    {
+                        Console.WriteLine("Du kannst nicht druch 0 Dividieren :D");
+                    }
+                }
+                Console.WriteLine("Möchtest du nochmal?");
+                varWiederholen = Console.ReadLine();
+                varWiederholen = varWiederholen.ToLower();
             }
 
-            
+            while (varWiederholen == "ja");
 
             Console.ReadKey();
 
