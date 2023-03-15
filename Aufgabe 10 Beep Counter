@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Counter__Gerade_Zahlen_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Gerade Zhlen";
+            //Variablen Deklariert und Initialisiert
+            int varZahlBenutzer = 0, varCounter = 0, varZahlSchritte = 0;
+            string varName;
+
+                //Frage
+                Console.WriteLine("Wie ist dein Name :");
+            varName = Console.ReadLine();
+            //Frage
+            Console.WriteLine("Wie hoch soll ich zählen:");
+            varZahlBenutzer = Convert.ToInt32(Console.ReadLine());
+
+            //Frage
+            Console.WriteLine("in welchen Schritten");
+            varZahlSchritte = Convert.ToInt32(Console.ReadLine());
+
+            //Schleife
+            while (varCounter < varZahlBenutzer) 
+            {
+                Console.WriteLine(varCounter);
+                varCounter += varZahlSchritte;
+
+
+            }
+            int varCounterBeep = 0;
+            while (varCounterBeep < 5)
+            {
+                Console.Beep();
+                varCounterBeep++;
+
+            }
+
+
+            Console.ReadLine();
+        }
+    }
+}
