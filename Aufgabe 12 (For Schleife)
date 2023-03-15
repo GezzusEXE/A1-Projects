@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgabe_12_ForSchleife
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // For Schleife - Zählergesteuert -> Counter
+            /*
+             * for (Statement 1; Statement2; Statement 3)
+             * {Code der ausgeführt werden soll}
+             * 
+             * Statement 1: Wird einmal ausgeführt Initialisierung Counter
+             *      int counter = 0;
+             * Statement 2 : Bedingung damit die Schleife ausgeführt wird
+             *      counter < 10;       ->Wahr? Schleife rennt!
+             * Statement 3 : Operation -> Immer nach dem Durchlauf der Schleife
+             *      counter             -> Nach dem Durchlauf Counter erhöhen
+             */
+
+            int varAnzahlSterne = 0;
+            Console.WriteLine("Anzahl Sterne");
+            varAnzahlSterne = Convert.ToInt32(Console.ReadLine());
+
+            for (int varCounter = 1; varCounter <= varAnzahlSterne; varCounter++)
+            {
+                Console.Write("*");
+
+            }
+            
+            int varDurchgang = 1;
+           
+            for (int varCounter = 0; varCounter <= 20; varCounter+=2)
+            { 
+                Console.WriteLine(+ varDurchgang +"Durchgang - Zahl:" + varCounter);
+                varDurchgang++;
+            }
+
+            Console.ReadKey();
+
+        }
+    }
+}
