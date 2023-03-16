@@ -1,0 +1,42 @@
+using System;
+
+namespace Sparzinsen
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Sparzinsen";
+
+            Console.WriteLine("Bitte geben Sie folgende Daten ein:");
+
+            Console.WriteLine("Nachname:");
+            string nachname = Console.ReadLine(); // Namen Eingabe (Nachname)
+
+            Console.WriteLine("Vorname:");
+            string vorname = Console.ReadLine(); // Vornamen Eingabe
+
+            Console.WriteLine($"Guten Tag {vorname}, ich bin Ihr digitaler Banking Assistent!"); // Textfeld für Digitaler Assistent
+
+            Console.WriteLine("Was ist Ihr Startkapital?");
+            float StartKapital = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Wie hoch ist der Zinssatz?");
+            float ZinsSatz = float.Parse(Console.ReadLine());
+
+            Console.WriteLine("Wie viele Jahre möchten Sie Ihr Geld veranlagen?");
+            int Jahre = int.Parse(Console.ReadLine());
+
+            float endkapital = StartKapital;
+
+            for (int i = 1; i <= Jahre; i++)
+            {
+                float zinsen = endkapital * ZinsSatz / 100;
+                endkapital += zinsen;
+                Console.WriteLine($"Nach dem {i}. Jahr haben Sie {endkapital:c2} auf Ihrem Konto.");
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
