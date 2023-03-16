@@ -1,0 +1,96 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MethodenWiederholung
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Aufruf der Methoden
+            Wilkommen();
+            Menue();
+            Console.ReadLine();
+        }
+        //Methode ohne Datenübergabe
+        static void Wilkommen()
+        {
+            Console.Clear();
+            string varUserName = "";
+            Console.WriteLine("wie ist dein Name?");
+            varUserName = Console.ReadLine();
+            // Konsole leeren
+            Console.Clear();
+            Console.WriteLine("Hallo: " + varUserName);
+        }
+
+        //Methode mit Datenübergabe
+        static void Menue()
+        {
+            Console.Clear();
+            Console.WriteLine("Bitte wähle aus folgenden Optionen");
+            Console.WriteLine("1 ........... Admin");
+            Console.WriteLine("2............ Türsteher");
+            int varBenutzereingabe = Convert.ToInt32(Console.ReadLine());
+            if (varBenutzereingabe == 1)
+            {
+                MenueAdmin();
+            }
+            else if (varBenutzereingabe == 2)
+            {
+                MenueTuersteher();
+            }
+
+
+        }
+
+        static void MenueAdmin()
+        {
+            Console.Clear();
+            Console.WriteLine("Hallo Admin, was möchtest du tun?");
+            Console.WriteLine("1 ........... Entspannen");
+            Console.WriteLine("2............ Verspannen");
+            
+            int varBenutzereingabe = Convert.ToInt32(Console.ReadLine());
+            switch (varBenutzereingabe)
+            {
+                case 1:
+                    Console.WriteLine(" 2 u wanna Massage?");
+                    break;
+                case 2:
+                    Console.WriteLine(" Finanz ist unterwegs");
+                    break;
+                default:
+                    Console.WriteLine("Error");
+                    break;
+            }
+
+        }
+
+        static void MenueTuersteher()
+        {
+            Console.Clear();
+            Console.WriteLine("Hallo Türsteher, was möchtest du tun?");
+            Console.WriteLine("1 ........... Reinlassen");
+            Console.WriteLine("2............ Raushauen");
+            int varBenutzereingabe = Convert.ToInt32(Console.ReadLine());
+            switch (varBenutzereingabe)
+            {
+                case 1:
+                    Console.WriteLine(" Seas ");
+                    break;
+                case 2:
+                    Console.WriteLine(" komsch net eine");
+                    break;
+                default:
+                    Console.WriteLine("Error");
+                    break;
+            }
+        }
+    }
+}
