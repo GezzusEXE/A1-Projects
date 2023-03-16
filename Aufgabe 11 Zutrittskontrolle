@@ -1,0 +1,102 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Zutrittkontrolle_Pomberger_Luka
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Title = "Zutrittskontrolle_Pomberger_Luka";
+
+            int varCounter2 = 0;
+            int varCounter = 0;
+            int varClubAdmin = 0;
+            
+            do
+            {
+
+                Console.WriteLine("1. Admin CB  \n2. Türsteher" );
+                string varAdmin = Console.ReadLine();
+                
+                if (varAdmin == "Admin CB")
+                {
+                    Console.WriteLine("Wie viele können in den Club?");
+                    varClubAdmin = Convert.ToInt32(Console.ReadLine());
+
+
+                    
+                }
+
+                
+
+                Console.WriteLine("Wilkommen im Night Club!!!!!!!!!!");
+                string varAnzahl = Console.ReadLine();
+
+                if(varAnzahl == "Wie viele können in den Night Club?")
+                {
+                    Console.WriteLine("Es können " + varClubAdmin + " Personen in den CLub rein");
+
+
+                }
+
+               
+
+                
+
+                Console.WriteLine("Wie heißt du ?");
+                string varName = Console.ReadLine();
+
+                Console.WriteLine("Wie Alt bist du?");
+                string VarAlter = Console.ReadLine();
+               
+                
+                
+
+                int varMainAlter = int.Parse(VarAlter);
+                
+
+
+
+
+
+                if (varMainAlter < 18)
+                {
+                    Console.WriteLine(" Der Zugriff wurde verweigert da du " + varMainAlter + " Jahre alt bist ");
+                }
+
+                else if (varMainAlter > 40)
+                {
+                    Console.WriteLine("Der Zugriff wurde verweigert da du " + varMainAlter + " Jahre alt bist");
+                }
+
+                else
+                {
+                    Console.WriteLine("Zugriff erlaubt da du " + varMainAlter + " Jahre alt bist ");
+
+                    varCounter++;
+                    varCounter2++;
+                    Console.WriteLine("Es sind " + varClubAdmin + " Personen im Club");
+                }
+
+
+
+            }
+            while (varCounter < varClubAdmin);
+            {
+                Console.WriteLine("Der Club ist voll !");
+                Console.WriteLine("Der Club ist Insgesamt mit " + varCounter2 + " Personen voll !");
+            }
+
+           
+
+           
+
+
+                Console.ReadKey();
+        }
+    }
+}
