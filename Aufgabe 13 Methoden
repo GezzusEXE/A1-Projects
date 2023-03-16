@@ -1,0 +1,64 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace Methoden_3
+{
+    internal class Program
+    {
+        public static void Main()   //Haupteingangspunkt
+        {
+            //DRY!
+            Console.Title = "Methoden";
+            //Aufruf der Methode
+            MeineMethode();
+            Willkommensnachricht();
+            MeineMethode();
+            Willkommensnachricht();
+            Familienname("Bianca", 18);
+            Familienname("Johannes", 32);
+            Familienname("Maphalda", 57);
+            Familienname("Yu-Ling", 645);
+            Mobilebrand("Nokia");
+            Mobilebrand("Nokia", "3150");
+            AutoMarke("Audi", "R8");
+            AutoMarke();
+
+            Console.ReadLine();
+        }
+
+       
+
+        
+        static void Familienname(string varVorname, int varAlter)
+        {
+            Console.WriteLine(varVorname + " Muster " + " du bist " + varAlter + " Jahre alt");
+        }
+        static void MeineMethode()         //Kennzeichnet eine Methode die keine Werte vom Hauptprogramm bekommt oder übergibt
+        { Console.WriteLine("Meine Methode zum ausgeben von Text"); }
+        static void Willkommensnachricht()
+        { //Willkommenssnachricht für Benutzer
+            Console.Write("#####Hi#####");
+            Console.WriteLine("####Hallo#####");
+            Console.WriteLine("##### Seas #####");
+            Console.WriteLine("####servus#####");
+        }
+
+        static void Mobilebrand(string varMobilebrand, string varModel = " xxx .")
+        {
+            Console.WriteLine(varMobilebrand +  "Modell: " + varModel);
+        }
+
+        static void AutoMarke(string varAutoMarke = "ÖBB", string varModelA = "Zug.")
+        
+        {
+            Console.WriteLine(varAutoMarke + " Modell :" + varModelA);
+        }
+
+
+
+
+
+        }
+}
