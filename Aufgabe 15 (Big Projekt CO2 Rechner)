@@ -1,0 +1,493 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aufgabe_CO2
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Title = "CO2 Aufgabe";
+
+
+
+
+            do
+            {
+                Console.Clear();
+
+
+
+                Console.WriteLine("Möchtest du Bahn oder Auto Rechner starten?");
+                string AntwortMain = Console.ReadLine();
+
+                AntwortMain = AntwortMain.ToLower();
+
+                if (AntwortMain == "auto")
+                {
+                    Autofragen();
+                }
+
+                else if (AntwortMain == "bahn")
+                {
+                    Bahnfragen();
+                }
+
+                else
+                {
+                    Console.WriteLine("Bro du HATTEST EINENENENEN JOB MAAAAAAAAAAAAAAAAAAAN!!!!!!!!!!!!!!!!!!!!!!");
+                }
+
+                Console.ReadKey();
+
+            }
+            while (true);
+
+        }
+
+        static void Autofragen()
+
+        {
+
+            Console.Clear();
+
+
+            Console.WriteLine("Besitzt du ein Auto?");
+            string varBesitztAuto = Console.ReadLine();
+
+            varBesitztAuto = varBesitztAuto.ToLower();
+
+            if (varBesitztAuto == "ja")
+            {
+                Console.Clear();
+                Console.WriteLine("Wie viele Kilometer bist du letztes Jahr gefahren?");
+                string varKilometer = Console.ReadLine();
+
+                Console.Clear() ;
+
+                Console.WriteLine("Fahrst du ein Fahrzeug das Diesel oder Benzin nutzt?");
+                string varTreibstoffArt = Console.ReadLine();
+
+                int varMainKilometer = int.Parse(varKilometer);
+                int varSummeDiesel = varMainKilometer * 140;
+                int varSummeBenzin = varMainKilometer * 125;
+                float varBaumRechnerBenzin = varSummeBenzin / 10000;
+                float varBaumRechnerDiesel = varSummeDiesel / 10000;
+                varTreibstoffArt = varTreibstoffArt.ToLower();
+                float varDieselHektar = varBaumRechnerDiesel / 100;
+                float varBenzinHektar = varBaumRechnerBenzin / 100;
+
+                if (varTreibstoffArt == "diesel")
+                {
+
+                    Console.Clear();
+
+                    Console.WriteLine("Du nutzt also Diesel ! Der Durchschnitts CO2 Austoss bei Diesel ist 140g/km");
+                    Console.Write("Du erzeugst im Jahr ");
+                    Console.Write((Console.ForegroundColor = ConsoleColor.DarkRed) + varSummeDiesel + " Gramm CO2.");
+
+                    Console.ForegroundColor = ConsoleColor.White;
+
+
+                    Console.WriteLine("\nDu müsstest " + varBaumRechnerDiesel + " Baum/Bäume Pflanzen um den CO2 Austoss zu begleichen !");
+                    Console.WriteLine("Möchtest du die Geilen Bäume sehen?");
+                    string varGeileBäumeMeme = Console.ReadLine();
+                    int varCounter = 0;
+
+                    varGeileBäumeMeme = varGeileBäumeMeme.ToLower();
+
+                    if (varGeileBäumeMeme == "ja")
+                    {
+
+                        Console.Clear();
+
+                        while (varCounter < varBaumRechnerDiesel)
+                        {
+
+                            Console.WriteLine("---O");
+
+                            varCounter++;
+
+
+                        }
+                    }
+
+                    else if (varGeileBäumeMeme == "nein")
+                    {
+
+                        Console.Clear();
+
+                        Console.WriteLine("Okay Chill bro!!!");
+                    }
+
+                    else
+                    {
+
+                        Console.Clear();
+
+                        Console.WriteLine("Bro musste nur ja oder nein schreiben!");
+                    }
+
+                    Console.WriteLine("Möchtest du Wissen wie viel Hektar Land du brauchst für deine Bäume?");
+                    string varDieselAbfrageHektar = Console.ReadLine();
+                    varDieselAbfrageHektar = varDieselAbfrageHektar.ToLower();
+
+                    if (varDieselAbfrageHektar == "ja")
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("Du brauchst " + varDieselHektar + " Hektar Land um dein Bäume zu Pflanzen");
+                    }
+
+                    else if (varDieselAbfrageHektar == "nein")
+                    {
+
+                        Console.Clear();
+
+                        Console.WriteLine("Okay");
+                    }
+
+                    else
+                    {
+
+                        Console.Clear();
+
+                        Console.WriteLine("Kannst du schreiben oder nicht dikka ich krieg ein anfall oida");
+                    }
+;
+                }
+
+
+
+                else if (varTreibstoffArt == "benzin")
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Du nutzt also Benzin ! Der Druchschnitts CO2 Austoss bei Benzin ist 125g/km");
+                    Console.Write("Du erzeugst im Jahr ");
+                    Console.Write((Console.ForegroundColor = ConsoleColor.DarkRed) + varSummeBenzin + " Gramm CO2.");
+
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                    Console.WriteLine("\nDu müsstest " + varBaumRechnerBenzin + " Baum/Bäume Pflanzen um den CO2 Austoss zu begleichen !");
+
+                    Console.WriteLine("Möchtest du die Geilen Bäume sehen?");
+                    string varGeileBäumeMeme = Console.ReadLine();
+                    int varCounter = 0;
+
+                    varGeileBäumeMeme = varGeileBäumeMeme.ToLower();
+
+                    if (varGeileBäumeMeme == "ja")
+                    {
+                        while (varCounter < varBaumRechnerBenzin)
+                        {
+
+                            Console.WriteLine("---O");
+
+                            varCounter++;
+
+
+                        }
+                    }
+
+                    else if (varGeileBäumeMeme == "nein")
+                    {
+                        Console.WriteLine("Okay Chill bro!!!");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("Bro musst nur ja oder nein schreiben!");
+                    }
+
+                    Console.WriteLine("Möchtest du Wissen wie viel Hektar Land du brauchst um dein scheiß Bäume zu Pflanzen?");
+                    string varBenzinAbfrageHektar = Console.ReadLine();
+
+                    varBenzinAbfrageHektar = varBenzinAbfrageHektar.ToLower();
+
+                    if (varBenzinAbfrageHektar == "ja")
+
+
+
+                    {
+                        Console.WriteLine("Du bräuchtest " + varBenzinHektar + " Hektar Land um deine Bäume zu Planten krass oder ?!");
+                    }
+
+                    else if (varBenzinAbfrageHektar == "nein")
+                    {
+                        Console.WriteLine("Okay");
+                    }
+
+                    else
+                    {
+                        Console.WriteLine("He brudda nix gut diese Deutsch bei dir?");
+                    }
+
+                }
+
+                else
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("BROOO du hattest ein Job man was los bei dir?!?!?!");
+                }
+
+
+            }
+
+
+
+            else if (varBesitztAuto == "nein")
+            {
+                Console.Clear();
+
+
+
+                Console.WriteLine("Da du kein Auto besitzt werde ich den Durchschnitt 13.900 Km benutzen");
+
+                Console.WriteLine("Da du kein Auto besitzt werde ich ebenfalls den Durchschnitt von 217g/km CO2 nutzen!");
+
+                int varSummeUnbekannt = 13900 * 217;
+                float varBaumRechnerUnbekannt = varSummeUnbekannt / 10000;
+                float varBaumHektarRechner = varBaumRechnerUnbekannt / 100;
+                int varCounter = 0;
+
+
+                Console.WriteLine("Wenn du wirklich 13.900 Km im Jahr fahrst");
+                Console.Write("Würdest du im Jahr ");
+                Console.Write((Console.ForegroundColor = ConsoleColor.DarkRed) + varSummeUnbekannt + " Gramm CO2 erzeugen.");
+
+                Console.ForegroundColor = ConsoleColor.White;
+
+                Console.WriteLine("\nDu müsstest " + varBaumRechnerUnbekannt + " Baum/Bäume Pflanzen um den CO2 Austoss zu begleichen !");
+
+                Console.WriteLine("Möchtest du die Geilen Bäume sehen?");
+                string varGeileBäumeMeme = Console.ReadLine();
+
+                varGeileBäumeMeme = varGeileBäumeMeme.ToLower();
+
+                if (varGeileBäumeMeme == "ja")
+                {
+                    Console.Clear();
+
+                    while (varCounter < varBaumRechnerUnbekannt)
+                    {
+
+                        Console.WriteLine("---O");
+
+                        varCounter++;
+
+
+                    }
+                }
+
+                else if (varGeileBäumeMeme == "nein")
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Okay Chill bro!!!");
+                }
+
+                else
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Bro musste nur ja oder nein schreiben!");
+                }
+
+
+
+
+                Console.WriteLine("Möchtest du Wissen wie viel Hektar Land das ist?");
+                string varUnbekanntHektarAbfrage = Console.ReadLine();
+
+                if (varUnbekanntHektarAbfrage == "ja")
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Du bräuchtest " + varBaumHektarRechner + " Hektar Land um die Bäume zu Pflanzen!");
+                }
+
+                else if (varUnbekanntHektarAbfrage == "nein")
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Okeee");
+
+                }
+
+                else
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Bro ich sitz seit fucking 6 Stunden in dem Scheiß zug");
+                }
+
+
+            }
+
+            else
+            {
+                Console.Clear();
+
+
+                Console.WriteLine("BROOO du hattest ein Job man was los bei dir?!?!?!");
+
+            }
+
+
+
+            Console.ReadLine();
+
+        }
+
+        static void Bahnfragen()
+        {
+            Console.Clear();
+
+
+            Console.WriteLine("Wie viel KM bist du ungefähr mit der Bahn gefahren?");
+            string varKilometerBahn = Console.ReadLine();
+
+            int varMainKilometerBahn = int.Parse(varKilometerBahn);
+            int varSummeBahn = varMainKilometerBahn * 14;
+            int varBahnBaumRechner = varSummeBahn / 10000;
+            float varHektarRechner = varBahnBaumRechner / 100;
+
+            Console.Clear();
+
+
+            Console.WriteLine("Du würdest wenn du " + varMainKilometerBahn + " Kilometer fahrst " + varSummeBahn + " Gramm CO2 erzeugen.");
+
+            Console.Write("Das wären ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write(varBahnBaumRechner);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write(" Baum/Bäume die man Pflanzen müsste!");
+
+
+
+            Console.WriteLine("\nMöchtest du die Geilen Bäume sehen?");
+            string varGeileBäumeMeme = Console.ReadLine();
+            int varCounter = 0;
+
+            varGeileBäumeMeme = varGeileBäumeMeme.ToLower();
+
+            if (varGeileBäumeMeme == "ja")
+            {
+                Console.Clear();
+
+                while (varCounter < varBahnBaumRechner)
+                {
+
+                    Console.ForegroundColor = ConsoleColor.Green;
+
+                    Console.WriteLine("      /\\          \r\n     //\\\\        \r\n    ///\\\\\\      \r\n   ////\\\\\\\\    \r\n  /////\\\\\\\\\\  \r\n //////\\\\\\\\\\\\\r\n      ||        \r\n      ||        \r\n      ||        \r\n");
+
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                    varCounter++;
+
+
+                }
+            }
+
+            else if (varGeileBäumeMeme == "nein")
+            {
+                Console.Clear();
+
+                Console.WriteLine("Okay Chill bro!!!");
+            }
+
+            else
+            {
+                Console.Clear();
+
+                Console.WriteLine("Bro musste nur ja oder nein schreiben!");
+            }
+
+            Console.WriteLine("\nMöchtest du Wissen wie viele Bäume du auf einen Hektar Pflanzen kannst?");
+            string varHektarAbfrage = Console.ReadLine();
+
+            varHektarAbfrage = varHektarAbfrage.ToLower();
+
+            if (varHektarAbfrage == "ja")
+            {
+                Console.Clear();
+
+                Console.WriteLine("\nUm deine Bäume zu Pflanzen brauchst du " + varHektarRechner + " Hektar Land!");
+
+                if (varHektarRechner == 0)
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Du fragst dich warum 0 Hektar ? Auf 1 HA passen rund 500 Bäume!");
+                }
+;
+            }
+
+
+            else if (varHektarAbfrage == "nein")
+            {
+                Console.Clear();
+
+                Console.WriteLine("\nOkay dann eben nicht");
+
+                Console.WriteLine("\nWillst du den Rechner nochmal machen oder hier verweilen?");
+                string varVerweilenMeme = Console.ReadLine();
+
+                varVerweilenMeme = varVerweilenMeme.ToLower();
+
+                if (varVerweilenMeme == "nochmal")
+                {
+                    Console.Clear();
+
+                    
+
+                }
+
+                else if (varVerweilenMeme == "verweilen")
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Bro denkt es passiert was");
+                }
+
+                else
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("Man kurze frage kannst du eigentlich schreiben du duuuummmmer ...");
+                }
+            }
+            else
+            {
+                Console.Clear();
+
+                Console.WriteLine("Bist du irgendwie bescheuert?");
+            }
+
+
+
+            Console.ReadKey();
+
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}
